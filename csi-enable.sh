@@ -1,8 +1,7 @@
 echo '-------Enable CSI on an EKS Cluster'
 
-export AWS_REGION=$MY_REGION
-export my_eks_cluster=$(eksctl get clusters | grep -v NAME | awk '{print $1}')
-eksctl utils associate-iam-oidc-provider --cluster $my_eks_cluster --approve --region $AWS_REGION
+export my_eks_cluster=$(eksctl get clusters | grep -v NAME | awk '{print $1}' | tail -1)
+eksctl utils associate-iam-oidc-provider --cluster $my_eks_cluster --approve --region $MY_REGION
 # aws iam detach-role-policy --role-name AmazonEKS_EBS_CSI_DriverRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy
 # aws iam delete-role --role-name AmazonEKS_EBS_CSI_DriverRole 
 
@@ -27,13 +26,13 @@ kubectl create -f https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-
 kubectl annotate sc gp2 storageclass.kubernetes.io/is-default-class-
 kubectl annotate sc ebs-sc storageclass.kubernetes.io/is-default-class=true
 
-cat <<EOF | kubectl create -f -
-apiVersion: snapshot.storage.k8s.io/v1
-kind: VolumeSnapshotClass
-metadata:
-  annotations:
-    k10.kasten.io/is-snapshot-class: "true"
-  name: ebs-vsc
-driver: ebs.csi.aws.com
-deletionPolicy: Delete
-EOF
+# cat <<EOF | kubectl create -f -
+# apiVersion: snapshot.storage.k8s.io/v1
+# kind: VolumeSnapshotClass
+# metadata:
+#   annotations:
+#     k10.kasten.io/is-snapshot-class: "true"
+#   name: ebs-vsc
+# driver: ebs.csi.aws.com
+# deletionPolicy: Delete
+# EOF
