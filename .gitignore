@@ -1,0 +1,8 @@
+eksctl
+helm
+kubectl
+*access*
+eks_*
+casa_*
+ebs*
+*migration_bucket*
