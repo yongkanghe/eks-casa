@@ -18,12 +18,14 @@ eksctl create cluster \
   --ssh-access \
   --managed
 
-aws eks update-kubeconfig --name $(cat casa_eks_clustername) --region $MY_REGION
+# aws eks update-kubeconfig --name $(cat casa_eks_clustername) --region $MY_REGION
 
 ./csi-enable.sh
 
 echo "" | awk '{print $1}'
 ./pg-deploy.sh
+
+echo "" | awk '{print $1}'
 
 endtime=$(date +%s)
 duration=$(( $endtime - $starttime ))
