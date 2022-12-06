@@ -14,7 +14,7 @@ This script based automation allows you to build a ready-to-use EKS demo environ
 ````
 git clone https://github.com/yongkanghe/eks-casa.git
 ````
-3. Install the required tools (eksctl, kubectl, helm) and input AWS Access Credentials
+3. Install the required tools (eksctl, kubectl, helm)
 ````
 cd eks-casa;./awsprep.sh;. ./setenv.sh
 ````
