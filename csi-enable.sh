@@ -25,14 +25,3 @@ kubectl create -f https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-
 
 kubectl annotate sc gp2 storageclass.kubernetes.io/is-default-class-
 kubectl annotate sc ebs-sc storageclass.kubernetes.io/is-default-class=true
-
-# cat <<EOF | kubectl create -f -
-# apiVersion: snapshot.storage.k8s.io/v1
-# kind: VolumeSnapshotClass
-# metadata:
-#   annotations:
-#     k10.kasten.io/is-snapshot-class: "true"
-#   name: ebs-vsc
-# driver: ebs.csi.aws.com
-# deletionPolicy: Delete
-# EOF
