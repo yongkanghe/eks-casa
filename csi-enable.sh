@@ -1,7 +1,7 @@
 echo '-------Enable CSI on an EKS Cluster'
 
 export my_eks_cluster=$(eksctl get clusters | grep -v NAME | grep eks4yong1 | awk '{print $1}' | tail -1)
-eksctl utils associate-iam-oidc-provider --cluster $my_eks_cluster --approve --region $MY_REGION
+eksctl utils associate-iam-oidc-provider --cluster $my_eks_cluster --approve --region $AWS_REGION
 # aws iam detach-role-policy --role-name AmazonEKS_EBS_CSI_DriverRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy
 # aws iam delete-role --role-name AmazonEKS_EBS_CSI_DriverRole 
 
