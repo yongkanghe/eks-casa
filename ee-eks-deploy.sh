@@ -25,6 +25,7 @@ echo "" | awk '{print $1}'
 
 endtime=$(date +%s)
 duration=$(( $endtime - $starttime ))
+echo "" | awk '{print $1}'
 echo "-------Total time to build an EKS cluster is $(($duration / 60)) minutes $(($duration % 60)) seconds."
 echo "" | awk '{print $1}'
 echo "-------Created by Yongkang"
