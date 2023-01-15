@@ -3,13 +3,10 @@ starttime=$(date +%s)
 . ~/.bashrc
 . ./setenv.sh
 
-echo $MY_CLUSTER-$(date +%s)$RANDOM > k10_eks_clustername
-# echo $MY_BUCKET-$(date +%s) > k10_eks_bucketname
-# export AWS_ACCESS_KEY_ID=$(cat awsaccess | head -1)
-# export AWS_SECRET_ACCESS_KEY=$(cat awsaccess | tail -1)
+echo $MY_CLUSTER-$(date +%s)$RANDOM > casa_ee_eks_clustername
 
 eksctl create cluster \
-  --name $(cat k10_eks_clustername) \
+  --name $(cat casa_ee_eks_clustername) \
   --version $MY_K8S_VERSION \
   --nodegroup-name workers4yong1 \
   --nodes 1 \
@@ -20,8 +17,6 @@ eksctl create cluster \
   --region $AWS_REGION \
   --ssh-access \
   --managed
-
-# aws eks update-kubeconfig --name $(cat k10_eks_clustername)
 
 ./csi-enable.sh
 
