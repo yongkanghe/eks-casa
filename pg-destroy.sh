@@ -1,4 +1,5 @@
-echo '-------Destroy a PostgreSQL sample database'
+echo '-------Deploy a PostgreSQL sample database'
 
-helm uninstall postgres -n yong-postgresql
-kubectl delete namespace yong-postgresql
+kubectl create namespace yong-postgresql
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install --namespace yong-postgresql postgres bitnami/postgresql --set primary.persistence.size=1Gi
