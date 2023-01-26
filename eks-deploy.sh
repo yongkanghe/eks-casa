@@ -14,7 +14,7 @@ eksctl create cluster \
   --nodes-max 3 \
   --node-type $MY_INSTANCE_TYPE \
   --ssh-public-key ~/.ssh/id_rsa.pub \
-  --region $MY_REGION \
+  --region $AWS_REGION \
   --ssh-access \
   --managed
 
