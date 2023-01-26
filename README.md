@@ -45,10 +45,12 @@ vi setenv.sh
 [![IMAGE ALT TEXT HERE](https://pbs.twimg.com/media/FK5rsaeXwAIEmtI?format=jpg&name=small)](https://www.youtube.com/channel/UCm-sw1b23K-scoVSCDo30YQ)
 #### Subscribe [K8s Data Management](https://www.youtube.com/channel/UCm-sw1b23K-scoVSCDo30YQ?sub_confirmation=1) Youtube Channel
 
-# CloudCasa - No. 1 Kubernetes Backup as a Service
+# CloudCasa - Best Kubernetes BaaS
 https://cloudcasa.io 
 
 # Contributors
 
-#### Follow [Yongkang He](http://yongkang.cloud) on LinkedIn, Join [Kubernetes Data Management](https://www.linkedin.com/groups/13983251) LinkedIn Group
-
+#### Follow [Yongkang He](http://yongkang.cloud) on LinkedIn
+#### Join [Kubernetes Data Management](https://www.linkedin.com/groups/13983251) LinkedIn Group
+#### Join [Kubernetes Data Management](http://t.k8sug.com) Telegram Group
+#### Join [Kubernetes Meetup](http://k8sug.com) User Group
