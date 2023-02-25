@@ -6,6 +6,7 @@ It is challenging to create an EKS cluster from AWS Cloud if you are not familia
 
 This script based automation allows you to build a ready-to-use EKS demo environment with PostgreSQL deployed in about 20 minutes with eks-deploy.sh. For simplicity and cost optimization, the EKS cluster will have only one worker node and create a separate vpc and subnets. This is bash shell based scripts which might only work on Cloud Shell. Linux and MacOS terminal may work as well, but I haven't tested it yet. 
 
+
 # Here're the prerequisities. 
 1. Go to open AWS Cloud Shell
 2. Clone the github repo, run below command
