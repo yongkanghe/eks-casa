@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: attack-scenario
+  labels:
+    env: test
+spec:
+  imagePullSecrets:
+  - name: attack-scenario-container-pull-key
+  containers:
+  - name: scenario
+    image: wizsensordemos.azurecr.io/attackscenario:latest
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/sleep", "3650d"]
+    securityContext:
+      privileged: true
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/dockerconfigjson
+metadata:
+  name: attack-scenario-container-pull-key
+data:
+  .dockerconfigjson: eyJhdXRocyI6IHsid2l6c2Vuc29yZGVtb3MuYXp1cmVjci5pbyI6IHsiYXV0aCI6ICJZM1Z6ZEc5dFpYSmhZMk5sYzNNNk5XOVViRmRsU0cxMVpUUkhTVlYyVW5CaU9DOTZiVVl2Tld0WE9IVjVNV054Y0VSbFRubGtOeko2SzBGRFVrSTJObU13VUE9PSJ9fX0=
