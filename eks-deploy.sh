@@ -5,12 +5,12 @@ starttime=$(date +%s)
 
 echo $MY_CLUSTER-$(date +%s)$RANDOM > casa_eks_clustername
 
-~/eks-casa/eksctl version | grep 147
+# ~/eks-casa/eksctl version | grep 162
 
-if [ `echo $?` -eq 1 ]; then
-  echo "Install the latest eksctl"
-  curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/v0.147.0/eksctl_Linux_amd64.tar.gz" | tar xz -C ~/eks-casa
-fi
+# if [ `echo $?` -eq 1 ]; then
+#   echo "Install the latest eksctl"
+#   curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/v0.162.0/eksctl_Linux_amd64.tar.gz" | tar xz -C ~/eks-casa
+# fi
 
 eksctl create cluster \
   --name $(cat casa_eks_clustername) \
