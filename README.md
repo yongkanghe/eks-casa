@@ -36,7 +36,7 @@ vi setenv.sh
 
 # Velero for EKS Automation 
 
-1. 1 min to enable GKE Backup via Velero
+1. 1 min to enable EKS Backup via Velero
 ````
 ./velero-deploy.sh
 ````
