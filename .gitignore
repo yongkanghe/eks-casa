@@ -10,3 +10,6 @@ ebs*
 wiz-pri*
 *credentials*
 *vuser*
+*connect-eks*
+sensor*
+wiz*
