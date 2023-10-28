@@ -8,4 +8,5 @@ ebs*
 *migration_bucket*
 *attack-*
 wiz-pri*
-
+*credentials*
+*vuser*
