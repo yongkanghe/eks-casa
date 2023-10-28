@@ -1,0 +1,20 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: hourly4yong1
+  namespace: velero
+spec:
+  schedule: 0 * * * *
+  template:
+    includedNamespaces:
+    - 'yong-postgresql'
+    excludedNamespaces:
+    includedResources:
+    - '*'
+    excludedResources:
+    - storageclasses.storage.k8s.io
+    includeClusterResources: null
+    snapshotVolumes: true
+    storageLocation: default
+    volumeSnapshotLocations:
+      - default
