@@ -15,7 +15,6 @@ echo "-------Create a S3 storage bucket if not exist"
 cat bucket4velero1
 if [ `echo $?` -eq 1 ];then
   echo $MY_BUCKET-$(date +%d%H%M%s) > bucket4velero1
-  gsutil mb gs://$(cat bucket4velero1)/
   aws s3api create-bucket \
     --bucket $(cat bucket4velero1) \
     --region $AWS_REGION \
@@ -51,7 +50,7 @@ cat > velero-policy.json <<EOF
                 "s3:ListMultipartUploadParts"
             ],
             "Resource": [
-                "arn:aws:s3:::${MY_BUCKET}/*"
+                "arn:aws:s3:::$(cat bucket4velero1)/*"
             ]
         },
         {
@@ -60,7 +59,7 @@ cat > velero-policy.json <<EOF
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::${MY_BUCKET}"
+                "arn:aws:s3:::$(cat bucket4velero1)"
             ]
         }
     ]
@@ -87,7 +86,7 @@ echo "-------Install velero using the IAM user and access key"
 velero install \
     --provider aws \
     --plugins velero/velero-plugin-for-aws:v1.8.0 \
-    --bucket $MY_BUCKET \
+    --bucket $(cat bucket4velero1) \
     --backup-location-config region=$AWS_REGION \
     --snapshot-location-config region=$AWS_REGION \
     --secret-file ./credentials-velero
