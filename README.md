@@ -34,6 +34,12 @@ vi setenv.sh
 ./eks-destroy.sh
 ````
 
+# Secure EKS Containers via Falco 
+
+````
+./falco-deploy.sh
+````
+
 # Build an EKS cluster via Web UI
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/d0vhf_ggnko/0.jpg)](https://www.youtube.com/watch?v=d0vhf_ggnko)
 #### Subscribe [K8s Data Management](https://www.youtube.com/channel/UCm-sw1b23K-scoVSCDo30YQ?sub_confirmation=1) Youtube Channel
