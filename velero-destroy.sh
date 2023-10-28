@@ -3,7 +3,8 @@ starttime=$(date +%s)
 . ./setenv.sh
 
 velero uninstall --force
-aws s3 rb s3://$(cat bucket4velero1) --force
+aws s3 rm s3://$(cat bucket4velero1) --recursive
+# aws s3 rb s3://$(cat bucket4velero1) --force
 aws iam delete-user-policy \
     --user-name vuser4yong1 \
     --policy-name vpolicy4yong1
