@@ -34,6 +34,18 @@ vi setenv.sh
 ./eks-destroy.sh
 ````
 
+# Velero for EKS Automation 
+
+1. 1 min to enable GKE Backup via Velero
+````
+./velero-deploy.sh
+````
+
+2. To clean up Velero for EKS
+````
+./velero-destroy.sh
+````
+
 # Secure EKS Containers via Falco 
 
 ````
