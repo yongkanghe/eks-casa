@@ -23,6 +23,9 @@ karmor logs -n yong-nginx
 kubectl exec -it $POD -n yong-nginx -- bash
 curl https://$KUBERNETES_PORT_443_TCP_ADDR/api --insecure --header "Authorization: Bearer $(cat /run/secrets/kubernetes.io/serviceaccount/token)"
 
+# Make sure you exit first before continuing to next
+exit
+
 # Apply the policy to deny access to service account token
 kubectl apply -f ./block-service-access-token-access.yaml
 
@@ -30,6 +33,9 @@ kubectl apply -f ./block-service-access-token-access.yaml
 kubectl exec -it $POD -n yong-nginx -- bash
 curl https://$KUBERNETES_PORT_443_TCP_ADDR/api --insecure --header "Authorization: Bearer $(cat /run/secrets/kubernetes.io/serviceaccount/token)"
 # forbidden: User \"system:anonymous\" cannot get path \"/api\”
+
+# Make sure you exit first before continuing to next
+exit
 
 # KubeArmor Test Case -3, audit access to folders/paths
 # Access to certain folders/paths might have to be audited for compliance/reporting reasons. Lets audit access to /etc/nginx/ folder within the deployment.
