@@ -67,7 +67,7 @@ karmor logs -n yong-nginx
 
 # Verify you can still access nginx web page
 kubectl port-forward $POD -n yong-nginx --address 0.0.0.0 8080:80
-
+curl localhost:8080
 
 
 
