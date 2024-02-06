@@ -1,4 +1,4 @@
-echo '-------Installing KubeArmor from the EKS Cluster (typically in ~2 mins)'
+echo '-------Installing KubeArmor on EKS Cluster (typically in ~2 mins)'
 starttime=$(date +%s)
 
 # Add helm chart repo

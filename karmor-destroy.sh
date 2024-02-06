@@ -1,5 +1,5 @@
 starttime=$(date +%s)
-echo '-------Deleting KubeArmor on EKS Cluster (typically in few mins)'
+echo '-------Deleting KubeArmor from the EKS Cluster (typically in few mins)'
 
 # Uninstall KubeArmor
 helm uninstall kubearmor-operator -n yong-kubearmor
