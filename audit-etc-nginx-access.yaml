@@ -1,0 +1,15 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: audit-etc-nginx-access
+  namespace: yong-nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx4yong1
+  file:
+    matchDirectories:
+    - dir: /etc/nginx/
+      recursive: true 
+  action:
+    Audit
