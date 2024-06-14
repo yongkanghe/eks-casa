@@ -12,10 +12,10 @@ eksctl create iamserviceaccount \
   --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
   --approve \
   --role-only \
-  --role-name AmazonEKS_EBS_CSI_DriverRole
+  --role-name Yong-AmazonEKS_EBS_CSI_DriverRole
 
 myaccount_id=$(aws sts get-caller-identity --query "Account" | sed -e 's/\"//g')
-eksctl create addon --name aws-ebs-csi-driver --cluster $my_eks_cluster --service-account-role-arn arn:aws:iam::$myaccount_id:role/AmazonEKS_EBS_CSI_DriverRole --force
+eksctl create addon --name aws-ebs-csi-driver --cluster $my_eks_cluster --service-account-role-arn arn:aws:iam::$myaccount_id:role/Yong-AmazonEKS_EBS_CSI_DriverRole --force
 
 kubectl create -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
 kubectl create -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
