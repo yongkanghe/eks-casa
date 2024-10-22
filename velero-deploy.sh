@@ -4,11 +4,11 @@ starttime=$(date +%s)
 
 echo "-------Download and Install verlero CLI if needed"
 if [ ! -f ~/eks-casa/velero ]; then
-  wget https://github.com/vmware-tanzu/velero/releases/download/v1.12.0/velero-v1.12.0-linux-amd64.tar.gz
-  tar -zxvf velero-v1.12.0-linux-amd64.tar.gz
-  sudo mv velero-v1.12.0-linux-amd64/velero ~/eks-casa
-  sudo rm velero-v1.12.0-linux-amd64.tar.gz
-  sudo rm -rf velero-v1.12.0-linux-amd64
+  wget https://github.com/vmware-tanzu/velero/releases/download/v1.14.1/velero-v1.14.1-linux-amd64.tar.gz
+  tar -zxvf velero-v1.14.1-linux-amd64.tar.gz
+  sudo mv velero-v1.14.1-linux-amd64/velero ~/eks-casa
+  sudo rm velero-v1.14.1-linux-amd64.tar.gz
+  sudo rm -rf velero-v1.14.1-linux-amd64
 fi
 
 echo "-------Create a S3 storage bucket if not exist"
@@ -85,7 +85,7 @@ EOF
 echo "-------Install velero using the IAM user and access key"
 velero install \
     --provider aws \
-    --plugins velero/velero-plugin-for-aws:v1.8.0 \
+    --plugins velero/velero-plugin-for-aws:v1.10.1 \
     --bucket $(cat bucket4velero1) \
     --backup-location-config region=$AWS_REGION \
     --snapshot-location-config region=$AWS_REGION \
